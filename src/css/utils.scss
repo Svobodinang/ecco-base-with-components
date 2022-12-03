@@ -1,0 +1,51 @@
+@use "sass:math";
+@import "./mixins/reset.scss";
+
+$basePxDp: 24;
+$baseWidthDp: 1600;
+$baseHeightDp: 1080;
+$maxWidthDp: 1600;
+
+// add
+$basePxMb: 18;
+$baseWidthMb: 375;
+$baseHeightMb: 667;
+
+@function rem($px, $mobile: false) {
+    $base: if($mobile == true, $basePxMb, $basePxDp);
+
+    // @return #{math.div($px, $base)}rem;
+    @return calc((#{$px} * var(--font-size)) / #{$base});
+}
+
+@function em($px, $ref) {
+    @return #{math.div($px, $ref)}em;
+}
+
+@mixin font-size {
+    // *
+    // * The basic font size for articles content and basic ui-elements
+    // *
+    line-height: 1.2;
+    font-weight: $font-weight-main;
+
+    --font-size: calc(1px * #{$basePxDp});
+
+    font-size: var(--font-size) !important;
+
+    @media (--viewport-mobile) {
+        --font-size: calc(1px * #{$basePxMb});
+
+        line-height: 1.5;
+    }
+
+    p,
+    span {
+        font-size: var(--font-size);
+        line-height: 1.2;
+
+        @media (--viewport-mobile) {
+            line-height: 1.5;
+        }
+    }
+}

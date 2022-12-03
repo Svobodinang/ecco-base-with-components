@@ -1,0 +1,60 @@
+{
+    "title": "TITLE",
+    "subtitle": "subtitle",
+    "goods": [
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        },
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        },
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        },
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        },
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        },
+        {
+            "text": "text",
+            "price": "price",
+            "link": "/",
+            "img": {
+                "src": "goods-1.jpg",
+                "alt": "товар"
+            }
+        }
+    ]
+}
