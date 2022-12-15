@@ -22,6 +22,34 @@ $baseHeightMb: 667;
     @return #{math.div($px, $ref)}em;
 }
 
+@function vw($px, $mobile: false, $clicker: false) {
+    $base: if($mobile == true, $baseWidthMb, $baseWidthDp);
+
+    @if $clicker == true {
+        $base: if($mobile == true, $baseWidthMb, $baseWidthClickerDp);
+    }
+
+    @return #{math.div(100 * $px, $base)}vw;
+}
+
+@function vh($px, $mobile: false, $clicker: false) {
+    $base: if($mobile == true, $baseHeightMb, $baseHeightDp);
+
+    @if $clicker == true {
+        $base: if($mobile == true, $baseWidthMb, $baseHeightClickerDp);
+    }
+
+    @return #{math.div($px * 100, $base)}vh;
+}
+
+@function vwvh($px, $mobile: false, $clicker: false) {
+    $vw: vw($px, $mobile, $clicker);
+    $vh: vh($px, $mobile, $clicker);
+
+    // very cool kostyl coz sass is case-sensitive, but css isn't
+    @return Min(#{$vw}, #{$vh});
+}
+
 @mixin font-size {
     // *
     // * The basic font size for articles content and basic ui-elements
